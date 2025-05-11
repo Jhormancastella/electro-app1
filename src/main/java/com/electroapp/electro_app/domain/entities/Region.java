@@ -34,7 +34,7 @@ public class Region {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(length = 50, nullable = true)
+    @Column(length = 50, nullable = false)
     private String name;
 
     @Embedded
@@ -43,7 +43,7 @@ public class Region {
     @ManyToOne
     @JoinColumn(name = "country_id")
     @JsonBackReference
-    Country contryId;
+    Country country;
 
     @OneToMany(mappedBy = "regionId",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     @JsonManagedReference

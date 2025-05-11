@@ -39,7 +39,7 @@ public class Country {
     @Embedded
     Audit audit = new Audit();
 
-    @OneToMany(mappedBy = "contryId",fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "country",fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JsonManagedReference
     private Set<Region> regions = new HashSet<>();
 }
